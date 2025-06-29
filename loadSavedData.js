@@ -1,5 +1,4 @@
     import { fetchUserData } from './app.js';
-    import { saveData } from './app.js';
     // Load data when dashboard opens
     document.addEventListener('DOMContentLoaded', async () => {
         const data = await fetchUserData();

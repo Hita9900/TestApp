@@ -44,7 +44,7 @@ async function signup() {
 }
 
 //saveData
-async function saveData(title, content) {
+export async function saveData(title, content) {
     const user = supabaseClient.auth.user();
     
     const { data, error } = await supabaseClient
@@ -65,7 +65,7 @@ async function saveData(title, content) {
 }
 
 //fetchUserData
-async function fetchUserData() {
+export async function fetchUserData() {
     const user = supabaseClient.auth.user();
     
     const { data, error } = await supabaseClient
