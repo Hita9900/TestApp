@@ -1,7 +1,11 @@
-// Initialize Supabase
-const supabaseUrl = 'https://zxoejcljodfirstxadkl.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4b2VqY2xqb2RmaXJzdHhhZGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExNDAwMTUsImV4cCI6MjA2NjcxNjAxNX0.s-YFL42yB5smxiWTBDzNUZX8ZQ861wy6DrLjoPwfpvo';
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Supabase
+    const supabaseUrl = 'https://zxoejcljodfirstxadkl.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4b2VqY2xqb2RmaXJzdHhhZGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExNDAwMTUsImV4cCI6MjA2NjcxNjAxNX0.s-YFL42yB5smxiWTBDzNUZX8ZQ861wy6DrLjoPwfpvo';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+});
+
+
 
 // Login function
 async function login() {
