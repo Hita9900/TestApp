@@ -19,6 +19,7 @@
 
 <script>
     // Load data when dashboard opens
+    import { fetchUserData } from './app.js';
     document.addEventListener('DOMContentLoaded', async () => {
         const data = await fetchUserData();
         const dataList = document.getElementById('data-list');
