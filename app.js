@@ -42,7 +42,7 @@ async function signup() {
         alert('Check your email for confirmation!');
     }
 }
-
+*/
 //saveData
 async function saveData(title, content) {
     const user = supabaseClient.auth.user();
@@ -85,7 +85,7 @@ if (data.length === 0) {
     }
 });
 
-
+/*
 //fetchUserData
 async function fetchUserData() {
     const user = supabaseClient.auth.user();
