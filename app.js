@@ -1,7 +1,9 @@
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+
 const supabaseUrl = 'https://zxoejcljodfirstxadkl.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4b2VqY2xqb2RmaXJzdHhhZGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExNDAwMTUsImV4cCI6MjA2NjcxNjAxNX0.s-YFL42yB5smxiWTBDzNUZX8ZQ861wy6DrLjoPwfpvo';
 // Initialize Supabase
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey);
 console.log("test 2: Supabase is:", typeof supabase); 
 
 
