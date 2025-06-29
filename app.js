@@ -11,11 +11,11 @@ async function login() {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
     
-    const { data, error } = await supabase.auth.signInWithPassword({
+    let { data, error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password
     });
-    
+       document.getElementById('login-password').value = "";
     if (error) {
         alert(error.message);
     } else {
@@ -29,7 +29,7 @@ async function signup() {
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
     
-    const { data, error } = await supabase.auth.signUp({
+    let { data, error } = await supabase.auth.signUp({
         email: email,
         password: password
     });
