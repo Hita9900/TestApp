@@ -4,4 +4,5 @@ document.head.innerHTML += `
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#FF0000"></meta>
+    <link rel="icon" type="image" href="favicon.svg">
     `;
