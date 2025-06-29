@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const supabaseUrl = 'https://zxoejcljodfirstxadkl.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4b2VqY2xqb2RmaXJzdHhhZGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExNDAwMTUsImV4cCI6MjA2NjcxNjAxNX0.s-YFL42yB5smxiWTBDzNUZX8ZQ861wy6DrLjoPwfpvo';
     const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-});
+
 
 
 
@@ -94,3 +94,5 @@ async function saveData(event) {
   if (error) alert("Error saving data!");
   else alert("Saved successfully!");
 }
+
+});
