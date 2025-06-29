@@ -85,7 +85,7 @@ if (data.length === 0) {
     }
 });
 
-/*
+
 //fetchUserData
 async function fetchUserData() {
     const user = supabaseClient.auth.user();
