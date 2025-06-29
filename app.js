@@ -45,9 +45,9 @@ async function signup() {
 
 //saveData
 async function saveData(title, content) {
-    const user = supabase.auth.user();
+    const user = supabaseClient.auth.user();
     
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
         .from('user_data')
         .insert([
             { 
@@ -66,9 +66,9 @@ async function saveData(title, content) {
 
 //fetchUserData
 async function fetchUserData() {
-    const user = supabase.auth.user();
+    const user = supabaseClient.auth.user();
     
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
         .from('user_data')
         .select('*')
         .eq('user_id', user.id);
