@@ -11,7 +11,7 @@ async function login() {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
     
-    let { data, error } = await supabase.auth.signInWithPassword({
+    let { data, error } = await supabaseClient.auth.signInWithPassword({
         email: email,
         password: password
     });
@@ -29,12 +29,12 @@ async function signup() {
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
     
-    let { data, error } = await supabase.auth.signUp({
+    let { data, error } = await supabaseClient.auth.signUp({
         email: email,
         password: password
     });
     
-    document.getElementById('signup-password').value = "";
+    document.getElementById('login-password').value = "";
 
     if (error) {
         alert(error.message);
