@@ -15,7 +15,7 @@ async function login() {
         email: email,
         password: password
     });
-       document.getElementById('login-password').value = "";
+
     if (error) {
         alert(error.message);
     } else {
@@ -34,6 +34,8 @@ async function signup() {
         password: password
     });
     
+    document.getElementById('signup-password').value = "";
+
     if (error) {
         alert(error.message);
     } else {
