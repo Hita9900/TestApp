@@ -45,8 +45,14 @@ async function signup() {
 
 //saveData
 async function saveData(title, content) {
-    const user = supabaseClient.auth.user();
+    // Get current user (new way)
+    const { data: { user } } = await supabaseClient.auth.getUser();
     
+    if (!user) {
+        console.error('No user logged in!');
+        return;
+    }
+
     const { data, error } = await supabaseClient
         .from('user_data')
         .insert([
@@ -60,7 +66,7 @@ async function saveData(title, content) {
     if (error) {
         console.error('Error saving data:', error);
     } else {
-        console.log('Data saved successfully!');
+        console.log('Data saved successfully!', data);
     }
 }
 
