@@ -5,7 +5,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 console.log("test 2: Supabase is:", typeof supabase); 
 
-
+/*
 // Login function
 async function login() {
     const email = document.getElementById('login-email').value;
