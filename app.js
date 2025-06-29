@@ -64,22 +64,6 @@ export async function saveData(title, content) {
     }
 }
 
-//fetchUserData
-export async function fetchUserData() {
-    const user = supabaseClient.auth.user();
-    
-    const { data, error } = await supabaseClient
-        .from('user_data')
-        .select('*')
-        .eq('user_id', user.id);
-    
-    if (error) {
-        console.error('Error fetching data:', error);
-    } else {
-        console.log('User data:', data);
-        return data;
-    }
-}
 /*
 //service worker registration
 if ('serviceWorker' in navigator) {
