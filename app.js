@@ -1,4 +1,3 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
 
 const supabaseUrl = 'https://zxoejcljodfirstxadkl.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4b2VqY2xqb2RmaXJzdHhhZGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExNDAwMTUsImV4cCI6MjA2NjcxNjAxNX0.s-YFL42yB5smxiWTBDzNUZX8ZQ861wy6DrLjoPwfpvo';
@@ -80,17 +79,3 @@ async function fetchUserData() {
     }
 }
 
-
-///submit data
-async function saveData(event) {
-  event.preventDefault();
-  const title = document.getElementById('data-title').value;
-  const content = document.getElementById('data-content').value;
-  
-  const { error } = await supabase
-    .from('user_data')
-    .insert([{ title, content }]); // Auto-fills user_id via RLS
-  
-  if (error) alert("Error saving data!");
-  else alert("Saved successfully!");
-}
