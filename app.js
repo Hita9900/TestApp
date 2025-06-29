@@ -44,7 +44,7 @@ async function signup() {
 }
 
 //saveData
-export async function saveData(title, content) {
+async function saveData(title, content) {
     const user = supabaseClient.auth.user();
     
     const { data, error } = await supabaseClient
