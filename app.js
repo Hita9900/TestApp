@@ -44,8 +44,14 @@ async function signup() {
 }
 
 //saveData
-async function saveData(title, content) {
-    // Get current user (new way)
+async function saveData(event) {
+
+    event.preventDefault();
+
+    const title = document.getElementById('data-title').value;
+    const content = document.getElementById('data-content').value;
+
+    // Get current user
     const { data: { user } } = await supabaseClient.auth.getUser();
     
     if (!user) {
@@ -53,20 +59,23 @@ async function saveData(title, content) {
         return;
     }
 
-    const { data, error } = await supabaseClient
+     // Save to Supabase
+    const { error } = await supabaseClient
         .from('user_data')
-        .insert([
-            { 
-                user_id: user.id, 
-                title: title,
-                content: content 
-            }
-        ]);
+        .insert([{ 
+            user_id: user.id, 
+            title: title,
+            content: content 
+        }]);
     
     if (error) {
         console.error('Error saving data:', error);
+        alert('Failed to save! Check console for details.');
     } else {
-        console.log('Data saved successfully!', data);
+        console.log('Data saved successfully!');
+        alert('Saved successfully!');
+        // Optional: Clear the form
+        event.target.reset();
     }
 }
 
