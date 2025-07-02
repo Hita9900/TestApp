@@ -60,7 +60,7 @@ async function saveData(event) {
     }
     
     // Save to Supabase
-    const { error } = await supabaseClient
+    const { data, error } = await supabaseClient
         .from('user_data')
         .insert([{ 
             user_id: user.id,
