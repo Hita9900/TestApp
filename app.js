@@ -45,6 +45,7 @@ async function signup() {
 
 //saveData
 async function saveData(event) {
+    
     event.preventDefault();
     const title = document.getElementById('data-title').value;
     const content = document.getElementById('data-content').value;
