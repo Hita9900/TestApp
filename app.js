@@ -44,7 +44,8 @@ async function signup() {
 }
 
 //saveData
-async function saveData() {
+async function saveData(event) {
+    event.preventDefault();
     console.log('anything');
     const title = document.getElementById('data-title').value;
     const content = document.getElementById('data-content').value;
@@ -66,12 +67,11 @@ async function saveData() {
             title: title,
             content: content 
         }]);
-    
     if (error) {
-        console.error('Error saving data:', error);
+        console.error("Oops! Error:", error.message); 
         alert('Failed to save! Check console for details.');
     } else {
-        console.log('Data saved successfully!');
+        console.log('Data saved successfully!', data);
         alert('Saved successfully!');
         // Optional: Clear the form
         event.target.reset();
