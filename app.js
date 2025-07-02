@@ -45,12 +45,10 @@ async function signup() {
 
 //saveData
 async function saveData(event) {
-    console.log("Supabase client:", supabaseClient);
     event.preventDefault();
-
     const title = document.getElementById('data-title').value;
     const content = document.getElementById('data-content').value;
-
+    
     // Get current user
     const { data: { user } } = await supabaseClient.auth.getUser();
     console.log("Current user:", user);
@@ -59,12 +57,12 @@ async function saveData(event) {
         console.error('No user logged in!');
         return;
     }
-
-     // Save to Supabase
+    
+    // Save to Supabase
     const { error } = await supabaseClient
         .from('user_data')
         .insert([{ 
-            user_id: user.id, 
+            user_id: user.id,
             title: title,
             content: content 
         }]);
