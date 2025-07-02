@@ -45,7 +45,7 @@ async function signup() {
 
 //saveData
 async function saveData(event) {
-
+    console.log("Supabase client:", supabaseClient);
     event.preventDefault();
 
     const title = document.getElementById('data-title').value;
@@ -53,7 +53,8 @@ async function saveData(event) {
 
     // Get current user
     const { data: { user } } = await supabaseClient.auth.getUser();
-    
+    console.log("Current user:", user);
+
     if (!user) {
         console.error('No user logged in!');
         return;
